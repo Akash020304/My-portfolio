@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #00bfff;
+  transition: 0.4s ease;
+}
+
+.logo:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00bfff;
+  transition: width 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 100px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.heading-content {
+  max-width: 600px;
+}
+
+.heading-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.heading-content h1 span {
+  color: #00bfff;
+}
+
+/* Typing text */
+.typing-text {
+  font-size: 1.6rem;
+  color: #a8e6ff;
+  font-weight: 600;
+  margin-bottom: 15px;
+  height: 40px;
+}
+
+.type {
+  border-right: 3px solid #00ffff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Paragraph */
+.heading-content p {
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #ddd;
+  animation: fadeIn 1.4s ease;
+}
+
+/* Resume Button */
+.button a {
+  display: inline-block;
+  background: #00bfff;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px #00bfff;
+}
+
+.button a:hover {
+  background: #009acd;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+/* Social Icons */
+.social {
+  margin-top: 25px;
+}
+
+.social a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 20px;
+  transition: transform 0.4s, color 0.3s;
+}
+
+.social a:hover {
+  color: #00ffff;
+  transform: translateY(-5px) scale(1.2);
+  text-shadow: 0 0 15px #00ffff;
+}
+
+/* Profile Image */
+.circle {
+  position: relative;
+}
+
+.image img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #00bfff;
+  box-shadow: 0 0 25px #00bfff;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Floating animation for image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Text Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heading {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+
+  .circle {
+    margin-top: 40px;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
